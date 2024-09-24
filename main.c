@@ -12,12 +12,28 @@ int main(void) {
     FILE *arquivo; 
 
     arquivo = fopen("tabuleiro.txt", "r");
+
+    if(arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+    }
+    
     for(i = 0; i < Lin; i++) {
         for(j = 0; j < Col; j++) {
             fscanf(arquivo, "%c", &mat[i][j]);
-            printf("%c", mat[i][j]); //testa se a impressão da matriz está correta
         }
+        fgetc(arquivo);
     }
+
     fclose(arquivo);
+
+    for(i = 0; i < Lin; i++) {
+        for(j = 0; j < Col; j++) {
+            if(mat[i][j] == '#' || mat[i][j] == 'o' || mat[i][j] == ' '){
+                printf("%c", mat[i][j]);
+            }
+        }
+        printf("\n");
+    }
+    
     return 0;
 }
