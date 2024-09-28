@@ -79,8 +79,7 @@ int main(void) {
         {2, 2, 2, 2, 2, 2, 2, 2, 2},
     };
 
-    int pino = 1;  // Inicialização do pino
-    int i = 4, j = 4;  // Iniciar a partir da posição central onde o pino está localizado
+    int pino, i, j;
 
     // Imprimir tabuleiro inicial
     printf("Tabuleiro inicial:\n");
